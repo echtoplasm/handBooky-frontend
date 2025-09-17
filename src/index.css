@@ -194,22 +194,7 @@ code, pre {
   box-shadow: 0 2px 8px rgba(168, 92, 92, 0.2);
 }
 
-/* Code Elements */
-code {
-  background-color: #f1f5f8;
-  color: var(--bs-accent-dark);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.875em;
-}
 
-pre {
-  background-color: var(--bs-dark);
-  color: #e5e7eb;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-}
 
 /* Scrollbar Styling */
 .scrollable-content::-webkit-scrollbar {
@@ -286,58 +271,3 @@ pre {
   font-weight: 500;
 }
 
-.like-logo {
-  background: none;
-  border: none;
-  padding: 0;
-  outline: none;
-  cursor: pointer;
-  transform: scale(125%);
-  transition: all 0.2s ease;
-  color: var(--bs-primary);
-  margin-right: 4px;
-}
-
-.like-logo:focus,
-.like-logo:active,
-.like-logo:hover:focus {
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.like-logo:hover {
-  transform: scale(135%);
-  color: var(--bs-secondary);
-}
-
-.like-count {
-  transform: translateY(5px) scale(95%);
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: var(--bs-primary);
-}
-
-/* Scientific/Academic Elements */
-.scientific-notation {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  color: var(--bs-accent-dark);
-}
-
-.data-table th {
-  font-family: var(--font-secondary);
-  font-weight: 600;
-  color: var(--bs-dark);
-  background-color: var(--post-bg);
-}
-
-.formula, .equation {
-  font-family: var(--font-mono);
-  background-color: #f8fafb;
-  padding: 0.5rem;
-  border-left: 3px solid var(--bs-primary);
-  border-radius: 0 4px 4px 0;
-}

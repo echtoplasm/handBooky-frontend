@@ -28,7 +28,6 @@ node_modules/
 
 # Gatsby (if you switch to Gatsby later)
 /.cache/
-/public
 
 # Vuepress (if you switch later)
 .vuepress/dist

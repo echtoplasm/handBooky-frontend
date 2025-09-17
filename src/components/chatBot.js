@@ -202,7 +202,7 @@ const ChatInterface = () => {
           </div>
 
           {/* Input Area */}
-          <div className="bg-white border-top p-3">
+          <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded">
             <div className="row g-3">
               <div className="col">
                 <div className="position-relative">
