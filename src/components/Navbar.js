@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <BSNavbar expand="lg" className="navBar">
       <Container>
-        <BSNavbar.Brand as={Link} to="/">handyBook</BSNavbar.Brand>
+        <BSNavbar.Brand as={Link} to="/" className="brandLink fs-3 fw-bold">handyBook</BSNavbar.Brand>
         <BSNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BSNavbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
