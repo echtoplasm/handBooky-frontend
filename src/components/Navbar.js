@@ -12,8 +12,6 @@ const Navbar = () => {
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/aboutUs">About Us</Nav.Link>
-            <Nav.Link as={NavLink} to="/handbooks">Handbooks</Nav.Link>
-            <Nav.Link as={NavLink} to="/WebSiteHelper">Website</Nav.Link>
           </Nav>
         </BSNavbar.Collapse>
       </Container>

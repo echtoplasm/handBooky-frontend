@@ -4,3 +4,40 @@
    CSS CUSTOM PROPERTIES (VARIABLES)
 ======================================== */
 
+:root {
+  --bg-primary: #91143a;
+  --bg-primary-light: #9e2f50;
+  --bg-primary-dark: #8a0028;
+
+  --font-primary: #ffffff;
+  --font-secondary: #eeeeee;
+}
+
+/* ========================================
+                 NAVBAR
+======================================== */
+
+.navBar {
+  background-color: var(--bg-primary);
+  color: #ffffff;
+}
+
+.brandLink {
+  color: #ffffff;
+}
+
+.brandLink:hover {
+  color: #dddddd;
+  transform: translateY(-3px);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--font-secondary);
+  -webkit-text-fill-color: white;
+}
+
+/* ========================================
+                 CARDS
+======================================== */
+
+/* ========================================
+                 BUTTONS
+======================================== */
