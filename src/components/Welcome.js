@@ -8,7 +8,7 @@ const WelcomePage = () => {
   return (
     <div className="flex-grow-1">
       <div className="card mt-3 text-center rounded shadow">
-        <h1 className="card-title-bg mt-3">Welcome to handyBook</h1>
+          <h1 className="card-title-bg mt-3">Welcome to handyBook</h1>
       </div>
 
       <div>
