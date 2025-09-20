@@ -36,13 +36,16 @@ const ChatInterface = () => {
 
     try {
       // Get AI response
-      const aiResponseText = await fetch('https://handbooky-backend-24df629011cd.herokuapp.com/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: userMessage.text,
-        }),
-      }); 
+      const aiResponseText = await fetch(
+        'https://handbooky-backend-24df629011cd.herokuapp.com/api/chat',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: userMessage.text,
+          }),
+        }
+      );
 
       const aiResponseData = await aiResponseText.json();
 
@@ -136,7 +139,7 @@ const ChatInterface = () => {
 
                   {/* Message Bubble */}
                   <div
-                    className={`p-3 rounded ${
+                    className={`p-3 rounded mb-3 ${
                       message.sender === 'user'
                         ? 'bg-success text-white'
                         : message.isError
@@ -159,7 +162,7 @@ const ChatInterface = () => {
 
             {/* Typing Indicator */}
             {isTyping && (
-              <div className="d-flex justify-content-start mb-3">
+              <div className="d-flex justify-content-start">
                 <div className="me-2">
                   <div
                     className="rounded-circle bg-primary d-flex align-items-center justify-content-center"
@@ -202,32 +205,34 @@ const ChatInterface = () => {
           </div>
 
           {/* Input Area */}
-          <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded">
-            <div className="row g-3">
-              <div className="col">
-                <div className="position-relative">
-                  <textarea
-                    ref={inputRef}
-                    value={inputValue}
-                    onChange={e => setInputValue(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    placeholder="Type your message here..."
-                    rows={1}
-                    className="form-control resize-none"
-                    style={{ minHeight: '44px', maxHeight: '120px' }}
-                    disabled={isTyping}
-                  />
+          <div>
+            <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded">
+              <div className="row g-3">
+                <div className="col">
+                  <div className="position-relative">
+                    <textarea
+                      ref={inputRef}
+                      value={inputValue}
+                      onChange={e => setInputValue(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      placeholder="Type your message here..."
+                      rows={1}
+                      className="form-control resize-none"
+                      style={{ minHeight: '44px', maxHeight: '120px' }}
+                      disabled={isTyping}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-auto">
-                <button
-                  onClick={handleSendMessage}
-                  disabled={!inputValue.trim() || isTyping}
-                  className="btn btn-primary h-100 d-flex align-items-center justify-content-center"
-                  style={{ width: '44px' }}
-                >
-                  <span>➤</span>
-                </button>
+                <div className="col-auto">
+                  <button
+                    onClick={handleSendMessage}
+                    disabled={!inputValue.trim() || isTyping}
+                    className="btn btn-primary h-100 d-flex align-items-center justify-content-center"
+                    style={{ width: '44px' }}
+                  >
+                    <span>➤</span>
+                  </button>
+                </div>
               </div>
             </div>
 
