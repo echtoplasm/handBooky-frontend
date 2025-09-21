@@ -81,9 +81,9 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="p-0 mt-2 mt-md-3 mx-auto">
+    <div className="p-0 mt-2 mt-md-3">
       <div className="row h-100 justify-content-center">
-        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light mx-1 mx-md-auto">
+        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light">
           {/* Header */}
           <div className="bg-white border-bottom p-2 p-md-3 shadow-sm rounded">
             <div className="d-flex align-items-center">

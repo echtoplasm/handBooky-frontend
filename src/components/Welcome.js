@@ -85,9 +85,6 @@ const WelcomePage = () => {
           </div>
         </div>
       </div>
-
-      {/* Description moved after collapsible section */}
-
       <div>
         <ChatInterface />
       </div>
