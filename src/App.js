@@ -9,7 +9,7 @@ import AboutUs from './components/AboutUs.js';
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
+      <div className="container app-container">
         <Navbar />
         <Routes>
           <Route path="/" element={<WelcomePage />} />

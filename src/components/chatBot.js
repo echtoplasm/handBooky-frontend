@@ -80,47 +80,47 @@ const ChatInterface = () => {
     }
   };
 
-  /*
-  const formatTime = (timestamp) => {
-    return timestamp.toLocaleTimeString('en-US', { 
-      hour: '2-digit', 
-      minute: '2-digit' 
-    });
-  };
-*/
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0 mt-2 mt-md-3 mx-auto">
       <div className="row h-100 justify-content-center">
-        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-3 bg-light">
+        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light mx-1 mx-md-auto">
           {/* Header */}
-          <div className="bg-white border-bottom p-3 shadow-sm rounded">
+          <div className="bg-white border-bottom p-2 p-md-3 shadow-sm rounded">
             <div className="d-flex align-items-center">
               <div
-                className="avatarBackground rounded-circle d-flex align-items-center justify-content-center me-3"
-                style={{ width: '40px', height: '40px'}}
+                className="avatarBackground rounded-circle d-flex align-items-center justify-content-center me-2 me-md-3"
+                style={{ width: '32px', height: '32px', '@media (min-width: 768px)': { width: '40px', height: '40px' } }}
               >
-                <span className="text-white fw-bold">🤖</span>
+                <span className="text-white fw-bold" style={{ fontSize: '0.8rem' }}>🤖</span>
               </div>
               <div>
-                <h5 className="mb-0 text-dark">Blazer AI</h5>
-                <small className="text-muted">Online and ready to help</small>
+                <h6 className="h5 mb-0 text-dark d-none d-md-block">Blazer AI</h6>
+                <h6 className="mb-0 text-dark d-md-none">Blazer AI</h6>
+                <small className="text-muted d-none d-sm-block">Online and ready to help</small>
               </div>
             </div>
           </div>
 
           {/* Messages Container */}
-          <div className="flex-grow-1 overflow-auto p-3" style={{ backgroundColor: '#f8f9fa', paddingBottom: '140px', marginBottom: '65px'}}>
+          <div 
+            className="flex-grow-1 overflow-auto p-1 p-md-3" 
+            style={{ 
+              backgroundColor: '#f8f9fa', 
+              paddingBottom: '160px',
+              marginBottom: '10px'
+            }}
+          >
             {messages.map(message => (
               <div
                 key={message.id}
-                className={`d-flex mb-3 ${message.sender === 'user' ? 'justify-content-end' : 'justify-content-start'}`}
+                className={`d-flex mb-2 mb-md-3 ${message.sender === 'user' ? 'justify-content-end' : 'justify-content-start'}`}
               >
                 <div
                   className={`d-flex ${message.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
-                  style={{ maxWidth: '70%' }}
+                  style={{ maxWidth: '85%', '@media (min-width: 768px)': { maxWidth: '70%' } }}
                 >
                   {/* Avatar */}
-                  <div className={message.sender === 'user' ? 'ms-2' : 'me-2'}>
+                  <div className={message.sender === 'user' ? 'ms-1 ms-md-2' : 'me-1 me-md-2'}>
                     <div
                       className={`rounded-circle d-flex align-items-center justify-content-center ${
                         message.sender === 'user'
@@ -129,9 +129,9 @@ const ChatInterface = () => {
                             ? 'bg-danger'
                             : 'avatarBackground'
                       }`}
-                      style={{ width: '32px', height: '32px' }}
+                      style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
                     >
-                      <span className="text-white small">
+                      <span className="text-white" style={{ fontSize: '0.7rem' }}>
                         {message.sender === 'user' ? <span className='whiteSilhouette p-0'>👤</span> : '🤖'}
                       </span>
                     </div>
@@ -139,7 +139,7 @@ const ChatInterface = () => {
 
                   {/* Message Bubble */}
                   <div
-                    className={`px-3 py-2 rounded mb-3 ${
+                    className={`px-2 px-md-3 py-2 rounded mb-2 mb-md-3 ${
                       message.sender === 'user'
                         ? 'userChatBubble text-white'
                         : message.isError
@@ -147,7 +147,7 @@ const ChatInterface = () => {
                           : 'bg-white text-dark border'
                     }`}
                   >
-                    <p className="mb-1 small" style={{ whiteSpace: 'pre-wrap' }}>
+                    <p className="mb-1" style={{ whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>
                       {message.text}
                     </p>
                     <small
@@ -163,34 +163,34 @@ const ChatInterface = () => {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="d-flex justify-content-start">
-                <div className="me-2">
+                <div className="me-1 me-md-2">
                   <div
                     className="avatarBackground rounded-circle d-flex align-items-center justify-content-center"
-                    style={{ width: '32px', height: '32px' }}
+                    style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
                   >
-                    <span className="text-white small">🤖</span>
+                    <span className="text-white" style={{ fontSize: '0.7rem' }}>🤖</span>
                   </div>
                 </div>
-                <div className="bg-white border rounded p-3">
+                <div className="bg-white border rounded p-2 p-md-3">
                   <div className="d-flex align-items-center">
                     <div className="d-flex me-2">
                       <div
                         className="bg-secondary rounded-circle me-1"
-                        style={{ width: '8px', height: '8px', animation: 'pulse 1.5s infinite' }}
+                        style={{ width: '6px', height: '6px', animation: 'pulse 1.5s infinite' }}
                       ></div>
                       <div
                         className="bg-secondary rounded-circle me-1"
                         style={{
-                          width: '8px',
-                          height: '8px',
+                          width: '6px',
+                          height: '6px',
                           animation: 'pulse 1.5s infinite 0.2s',
                         }}
                       ></div>
                       <div
                         className="bg-secondary rounded-circle"
                         style={{
-                          width: '8px',
-                          height: '8px',
+                          width: '6px',
+                          height: '6px',
                           animation: 'pulse 1.5s infinite 0.4s',
                         }}
                       ></div>
@@ -206,8 +206,9 @@ const ChatInterface = () => {
 
           {/* Input Area */}
           <div>
-            <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded mb-4">
-              <div className="row g-3">
+            <div className="bg-white border border-2 border-primary p-2 p-md-3 fixed-bottom mx-1 mx-md-auto w-auto rounded mb-2 mb-md-4" 
+                 style={{ left: '0.5rem', right: '0.5rem', '@media (min-width: 768px)': { left: 'auto', right: 'auto', width: '75%' } }}>
+              <div className="row g-2 g-md-3">
                 <div className="col">
                   <div className="position-relative">
                     <textarea
@@ -218,7 +219,7 @@ const ChatInterface = () => {
                       placeholder="Type your message here..."
                       rows={1}
                       className="form-control resize-none"
-                      style={{ minHeight: '44px', maxHeight: '120px' }}
+                      style={{ minHeight: '40px', maxHeight: '100px', fontSize: '0.9rem' }}
                       disabled={isTyping}
                     />
                   </div>
@@ -228,15 +229,15 @@ const ChatInterface = () => {
                     onClick={handleSendMessage}
                     disabled={!inputValue.trim() || isTyping}
                     className="btn btn-primary h-100 d-flex align-items-center justify-content-center"
-                    style={{ width: '44px' }}
+                    style={{ width: '40px', minHeight: '40px' }}
                   >
-                    <span>➤</span>
+                    <span style={{ fontSize: '0.9rem' }}>➤</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className="text-center mt-2">
+            <div className="text-center mt-2 d-none d-md-block">
               <small className="text-muted">Press Enter to send • Shift + Enter for new line</small>
             </div>
           </div>
@@ -258,7 +259,7 @@ const ChatInterface = () => {
         }
 
         .overflow-auto::-webkit-scrollbar {
-          width: 6px;
+          width: 4px;
         }
 
         .overflow-auto::-webkit-scrollbar-track {
@@ -272,6 +273,14 @@ const ChatInterface = () => {
 
         .overflow-auto::-webkit-scrollbar-thumb:hover {
           background: #a8a8a8;
+        }
+
+        @media (max-width: 767px) {
+          .fixed-bottom {
+            left: 0.5rem !important;
+            right: 0.5rem !important;
+            width: auto !important;
+          }
         }
       `}</style>
     </div>
