@@ -4,7 +4,7 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState(() => [
     {
       id: 'initial-1',
-      text: "Hello! I'm your AI assistant. How can I help you today?",
+      text: "Hello! I'm Blazer your AB-tech centered AI assistant. How can I help?",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -89,27 +89,27 @@ const ChatInterface = () => {
   };
 */
   return (
-    <div className="container-fluid vh-100 p-0">
+    <div className="container-fluid p-0">
       <div className="row h-100 justify-content-center">
-        <div className="col-12 col-lg-8 d-flex flex-column bg-light">
+        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-3 bg-light">
           {/* Header */}
-          <div className="bg-white border-bottom p-3 shadow-sm">
+          <div className="bg-white border-bottom p-3 shadow-sm rounded">
             <div className="d-flex align-items-center">
               <div
-                className="rounded-circle bg-primary d-flex align-items-center justify-content-center me-3"
-                style={{ width: '40px', height: '40px' }}
+                className="avatarBackground rounded-circle d-flex align-items-center justify-content-center me-3"
+                style={{ width: '40px', height: '40px'}}
               >
                 <span className="text-white fw-bold">🤖</span>
               </div>
               <div>
-                <h5 className="mb-0 text-dark">AI Assistant</h5>
+                <h5 className="mb-0 text-dark">Blazer AI</h5>
                 <small className="text-muted">Online and ready to help</small>
               </div>
             </div>
           </div>
 
           {/* Messages Container */}
-          <div className="flex-grow-1 overflow-auto p-3" style={{ backgroundColor: '#f8f9fa' }}>
+          <div className="flex-grow-1 overflow-auto p-3" style={{ backgroundColor: '#f8f9fa', paddingBottom: '140px', marginBottom: '65px'}}>
             {messages.map(message => (
               <div
                 key={message.id}
@@ -124,24 +124,24 @@ const ChatInterface = () => {
                     <div
                       className={`rounded-circle d-flex align-items-center justify-content-center ${
                         message.sender === 'user'
-                          ? 'bg-success'
+                          ? 'userChatBubble'
                           : message.isError
                             ? 'bg-danger'
-                            : 'bg-primary'
+                            : 'avatarBackground'
                       }`}
                       style={{ width: '32px', height: '32px' }}
                     >
                       <span className="text-white small">
-                        {message.sender === 'user' ? '👤' : '🤖'}
+                        {message.sender === 'user' ? <span className='whiteSilhouette p-0'>👤</span> : '🤖'}
                       </span>
                     </div>
                   </div>
 
                   {/* Message Bubble */}
                   <div
-                    className={`p-3 rounded mb-3 ${
+                    className={`px-3 py-2 rounded mb-3 ${
                       message.sender === 'user'
-                        ? 'bg-success text-white'
+                        ? 'userChatBubble text-white'
                         : message.isError
                           ? 'bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25'
                           : 'bg-white text-dark border'
@@ -165,7 +165,7 @@ const ChatInterface = () => {
               <div className="d-flex justify-content-start">
                 <div className="me-2">
                   <div
-                    className="rounded-circle bg-primary d-flex align-items-center justify-content-center"
+                    className="avatarBackground rounded-circle d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px' }}
                   >
                     <span className="text-white small">🤖</span>
@@ -206,7 +206,7 @@ const ChatInterface = () => {
 
           {/* Input Area */}
           <div>
-            <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded">
+            <div className="bg-white border border-2 border-primary p-3 fixed-bottom mx-auto w-75 rounded mb-4">
               <div className="row g-3">
                 <div className="col">
                   <div className="position-relative">

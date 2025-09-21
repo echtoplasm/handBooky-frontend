@@ -1,24 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* ========================================
    CSS CUSTOM PROPERTIES (VARIABLES)
 ======================================== */
 
 :root {
+  --bs-primary: #91143a;
+  --bs-primary-rgb: 145, 20, 58;
+  --bs-primary-text-emphasis: #91143a;
+  --bs-primary-bg-subtle: #f8d7dd;
+  --bs-primary-border-subtle: #f1aeb8;
+  
   --bg-primary: #91143a;
-  --bg-primary-light: #9e2f50;
   --bg-primary-dark: #8a0028;
+  --bg-primary-light: #f54963;
+  --bg-primary-verylight: #fca2a2;
+
+  --gradient-color-burgundy: #8a0028;     /* Darkest - deep burgundy */
+  --gradient-color-darkrose: #a41e42;     /* Smoother dark rose */
+  --gradient-color-medrose: #c9405c;      /* Better medium rose */
+  --gradient-color-lightorange: #e8763a;  /* Bridge color - light orange */
+  --gradient-color-gold: #fcb72b;         /* Gold */
+  --gradient-color-darkgold: #b57900;     /* Dark gold */
+  
 
   --font-primary: #ffffff;
-  --font-secondary: #eeeeee;
+  --font-secondary: #696868;
+  --font-highlight: #f7bb05;
+
+  --bs-btn-bg: #91143a;
+  --bs-btn-border-color: #91143a;
+  --bs-btn-hover-bg: #8a0028;
+  --bs-btn-hover-border-color: #8a0028;
+  --bs-btn-active-bg: #8a0028;
+  --bs-btn-active-border-color: #8a0028;
 }
+
+
+/* ========================================
+                 TYPOGRAPHY
+======================================== */
+h1, h2, h3 {
+  font-family: 'Rubik', sans-serif;
+}
+
+p, span {
+  font-family: 'Nunito', sans-serif;
+}
+
+.subText {
+  color: var(--font-secondary);
+}
+
 
 /* ========================================
                  NAVBAR
 ======================================== */
 
 .navBar {
-  background-color: var(--bg-primary);
+  background: radial-gradient(
+    ellipse at top left,
+    var(--gradient-color-burgundy) 0%,
+    var(--gradient-color-darkrose) 30%,
+    var(--gradient-color-medrose) 60%,
+    var(--gradient-color-gold) 90%
+  );
   color: #ffffff;
 }
 
@@ -28,16 +74,98 @@
 
 .brandLink:hover {
   color: #dddddd;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--font-secondary);
   -webkit-text-fill-color: white;
+}
+
+.navBar .navbar-nav .nav-link.navLinker {
+  color: #ffffff;
+}
+.navBar .navbar-nav .nav-link.navLinker:hover {
+  color: var(--font-highlight);
+  transform: translateY(-2px);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--font-highlight);
+  -webkit-text-fill-color: var(--font-highlight);
+}
+
+.navLinker {
+  color: #ffffff;
+  position: relative;
+  padding: 0px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLinker::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--font-highlight);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navLinker:hover::after {
+  width: 100%;
+}
+
+.navLinker:hover {
+  color: var(--font-highlight);
+  transform: translateY(-2px);
 }
 
 /* ========================================
                  CARDS
 ======================================== */
 
+.card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(240, 242, 245, 0.35) 20%,
+    rgba(220, 225, 230, 0.45) 40%,
+    rgba(200, 210, 220, 0.35) 70%,
+    rgba(240, 242, 245, 0.25) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
 /* ========================================
                  BUTTONS
 ======================================== */
+
+/* ========================================
+              CHATBOT STYLES
+======================================== */
+
+.avatarBackground {
+  background-color: var(--bg-primary-verylight);
+}
+
+.chatContainer {
+  min-height: 75vh;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.whiteSilhouette {
+  filter: invert(3);
+}
+
+.userChatBubble {
+  background-color: var(--bg-primary-dark)
+}
+
+

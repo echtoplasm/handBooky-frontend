@@ -10,8 +10,8 @@ const Navbar = () => {
         <BSNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BSNavbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
-            <Nav.Link as={NavLink} to="/aboutUs">About Us</Nav.Link>
+            <Nav.Link as={NavLink} to="/" className="navLinker">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/aboutUs" className="navLinker">About Us</Nav.Link>
           </Nav>
         </BSNavbar.Collapse>
       </Container>
