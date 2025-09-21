@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { BotMessageSquare } from 'lucide-react';
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState(() => [
@@ -91,7 +92,7 @@ const ChatInterface = () => {
                 className="avatarBackground rounded-circle d-flex align-items-center justify-content-center me-2 me-md-3"
                 style={{ width: '32px', height: '32px', '@media (min-width: 768px)': { width: '40px', height: '40px' } }}
               >
-                <span className="text-white fw-bold" style={{ fontSize: '0.8rem' }}>🤖</span>
+                <span className="text-white fw-bold" style={{ fontSize: '0.8rem' }}><BotMessageSquare /></span>
               </div>
               <div>
                 <h6 className="h5 mb-0 text-dark d-none d-md-block">Blazer AI</h6>
@@ -132,7 +133,7 @@ const ChatInterface = () => {
                       style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
                     >
                       <span className="text-white" style={{ fontSize: '0.7rem' }}>
-                        {message.sender === 'user' ? <span className='whiteSilhouette p-0'>👤</span> : '🤖'}
+                        {message.sender === 'user' ? <span className='whiteSilhouette p-0'>👤</span> : <BotMessageSquare />}
                       </span>
                     </div>
                   </div>
@@ -168,7 +169,7 @@ const ChatInterface = () => {
                     className="avatarBackground rounded-circle d-flex align-items-center justify-content-center"
                     style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
                   >
-                    <span className="text-white" style={{ fontSize: '0.7rem' }}>🤖</span>
+                    <span className="text-white" style={{ fontSize: '0.7rem' }}><BotMessageSquare /></span>
                   </div>
                 </div>
                 <div className="bg-white border rounded p-2 p-md-3">
