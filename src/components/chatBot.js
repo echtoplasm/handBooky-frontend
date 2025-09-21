@@ -81,7 +81,7 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="container-fluid p-0 mt-2 mt-md-3 mx-auto">
+    <div className="p-0 mt-2 mt-md-3 mx-auto">
       <div className="row h-100 justify-content-center">
         <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light mx-1 mx-md-auto">
           {/* Header */}
@@ -206,7 +206,7 @@ const ChatInterface = () => {
 
           {/* Input Area */}
           <div>
-            <div className="bg-white border border-2 border-primary p-2 p-md-3 fixed-bottom mx-1 mx-md-auto w-auto rounded mb-2 mb-md-4" 
+            <div className="bg-white border border-2 border-primary p-2 p-md-3 mx-1 mx-md-auto w-auto rounded mb-2 mb-md-4" 
                  style={{ left: '0.5rem', right: '0.5rem', '@media (min-width: 768px)': { left: 'auto', right: 'auto', width: '75%' } }}>
               <div className="row g-2 g-md-3">
                 <div className="col">
@@ -218,7 +218,7 @@ const ChatInterface = () => {
                       onKeyPress={handleKeyPress}
                       placeholder="Type your message here..."
                       rows={1}
-                      className="form-control resize-none"
+                      className="form-control resize-none custom-textarea"
                       style={{ minHeight: '40px', maxHeight: '100px', fontSize: '0.9rem' }}
                       disabled={isTyping}
                     />
@@ -228,8 +228,13 @@ const ChatInterface = () => {
                   <button
                     onClick={handleSendMessage}
                     disabled={!inputValue.trim() || isTyping}
-                    className="btn btn-primary h-100 d-flex align-items-center justify-content-center"
-                    style={{ width: '40px', minHeight: '40px' }}
+                    className="btn h-100 d-flex align-items-center justify-content-center"
+                    style={{ width: '40px',
+                             minHeight: '40px',
+                             backgroundColor: '#dc3545',
+                             borderColor: '#dc3545',
+                             color: 'white'
+                           }}
                   >
                     <span style={{ fontSize: '0.9rem' }}>➤</span>
                   </button>
