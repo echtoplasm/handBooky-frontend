@@ -17,8 +17,8 @@ const Navbar = () => {
           <img
             src={LOGO_SRC}
             alt="Blazer AI logo"
-            height="75"
-            width="75"
+            height="60"
+            width="60"
             className="d-inline-block align-text-top"
             loading="eager"
             decoding="async"
@@ -28,7 +28,7 @@ const Navbar = () => {
               <Logo style={{ height: 36, width: 36 }} className="d-inline-block align-text-top" />
           */}
 
-          <span className="fs-1 fw-bold">Blazer AI</span>
+          <span className="fw-bold" style={{ fontSize: '2.5rem' }}>Blazer AI</span>
         </BSNavbar.Brand>
 
         <BSNavbar.Toggle aria-controls="basic-navbar-nav" />

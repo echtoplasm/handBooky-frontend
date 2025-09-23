@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatInterface from './chatBot';
-import { LucideComputer, CalendarCog, HeartPlus, NotebookPen, Binary, Lightbulb, BookOpenCheck, Zap } from 'lucide-react';
+import { LucideComputer, CalendarCog, NotebookPen, Binary, Lightbulb, BookOpenCheck, Zap } from 'lucide-react';
 
 const WelcomePage = () => {
   return (
@@ -52,7 +52,7 @@ const WelcomePage = () => {
             </div>
           </div>
 
-          <div className="welcome-description mb-4">
+          <div className="welcome-description my-4">
             <p className="lead text-muted mb-3">
               Your intelligent companion for navigating AB Tech! I'm here to help students,
               faculty, and staff find answers quickly and efficiently.

@@ -84,15 +84,15 @@ const ChatInterface = () => {
   return (
     <div className="p-0 mt-2 mt-md-3">
       <div className="row h-100 justify-content-center">
-        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light">
+        <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3">
           {/* Header */}
           {/* Messages Container */}
-          <div 
-            className="flex-grow-1 overflow-auto p-1 p-md-3" 
-            style={{ 
-              backgroundColor: '#f8f9fa', 
+          <div
+            className="flex-grow-1 overflow-auto p-1 p-md-3 rounded"
+            style={{
+              backgroundColor: '#ffffff',
               paddingBottom: '160px',
-              marginBottom: '10px'
+              marginBottom: '10px',
             }}
           >
             {messages.map(message => (
@@ -114,10 +114,18 @@ const ChatInterface = () => {
                             ? 'bg-danger'
                             : 'avatarBackground'
                       }`}
-                      style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
+                      style={{
+                        width: '28px',
+                        height: '28px',
+                        '@media (min-width: 768px)': { width: '32px', height: '32px' },
+                      }}
                     >
                       <span className="text-white" style={{ fontSize: '0.7rem' }}>
-                        {message.sender === 'user' ? <span className='whiteSilhouette p-0'>👤</span> : <BotMessageSquare />}
+                        {message.sender === 'user' ? (
+                          <span className="whiteSilhouette p-0">👤</span>
+                        ) : (
+                          <BotMessageSquare />
+                        )}
                       </span>
                     </div>
                   </div>
@@ -151,9 +159,15 @@ const ChatInterface = () => {
                 <div className="me-1 me-md-2">
                   <div
                     className="avatarBackground rounded-circle d-flex align-items-center justify-content-center"
-                    style={{ width: '28px', height: '28px', '@media (min-width: 768px)': { width: '32px', height: '32px' } }}
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      '@media (min-width: 768px)': { width: '32px', height: '32px' },
+                    }}
                   >
-                    <span className="text-white" style={{ fontSize: '0.7rem' }}><BotMessageSquare /></span>
+                    <span className="text-white" style={{ fontSize: '0.7rem' }}>
+                      <BotMessageSquare />
+                    </span>
                   </div>
                 </div>
                 <div className="bg-white border rounded p-2 p-md-3">
@@ -191,8 +205,14 @@ const ChatInterface = () => {
 
           {/* Input Area */}
           <div>
-            <div className="bg-white border border-2 border-primary p-2 p-md-3 mx-1 mx-md-auto w-auto rounded mb-2 mb-md-4" 
-                 style={{ left: '0.5rem', right: '0.5rem', '@media (min-width: 768px)': { left: 'auto', right: 'auto', width: '75%' } }}>
+            <div
+              className="bg-white border border-2 border-primary p-2 p-md-3 mx-1 mx-md-auto w-auto rounded mb-2 mb-md-4"
+              style={{
+                left: '0.5rem',
+                right: '0.5rem',
+                '@media (min-width: 768px)': { left: 'auto', right: 'auto', width: '75%' },
+              }}
+            >
               <div className="row g-2 g-md-3">
                 <div className="col">
                   <div className="position-relative">
@@ -214,12 +234,13 @@ const ChatInterface = () => {
                     onClick={handleSendMessage}
                     disabled={!inputValue.trim() || isTyping}
                     className="btn h-100 d-flex align-items-center justify-content-center"
-                    style={{ width: '40px',
-                             minHeight: '40px',
-                             backgroundColor: '#dc3545',
-                             borderColor: '#dc3545',
-                             color: 'white'
-                           }}
+                    style={{
+                      width: '40px',
+                      minHeight: '40px',
+                      backgroundColor: '#dc3545',
+                      borderColor: '#dc3545',
+                      color: 'white',
+                    }}
                   >
                     <span style={{ fontSize: '0.9rem' }}>➤</span>
                   </button>

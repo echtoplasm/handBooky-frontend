@@ -16,7 +16,7 @@
   --bg-primary-light: #f54963;
   --bg-primary-verylight: #fca2a2;
 
-  --gradient-color-burgundy: #8a0028; /* Darkest - deep burgundy */
+  --gradient-color-burgundy: #880029; /* Darkest - deep burgundy */
   --gradient-color-darkrose: #a41e42; /* Smoother dark rose */
   --gradient-color-medrose: #c9405c; /* Better medium rose */
   --gradient-color-lightorange: #e8763a; /* Bridge color - light orange */
@@ -33,6 +33,14 @@
   --bs-btn-hover-border-color: #8a0028;
   --bs-btn-active-bg: #8a0028;
   --bs-btn-active-border-color: #8a0028;
+
+  --btn-outline-primary-color: var(--gradient-color-burgundy);
+  --btn-outline-primary-border: var(--gradient-color-burgundy);
+  --btn-outline-primary-hover-color: #ffffff;
+  --btn-outline-primary-hover-bg: var(--gradient-color-burgundy);
+  --btn-outline-primary-hover-border: var(--gradient-color-burgundy);
+  --btn-outline-primary-active-bg: var(--gradient-color-darkrose);
+  --btn-outline-primary-active-border: var(--gradient-color-darkrose);
 
   --ash-background: #333231;
   --ash-background-light: #4f4f4f;
@@ -203,9 +211,10 @@ span {
   background: radial-gradient(
     ellipse at top left,
     var(--gradient-color-burgundy) 0%,
-    var(--gradient-color-darkrose) 30%,
-    var(--gradient-color-medrose) 60%,
-    var(--gradient-color-gold) 90%
+    var(--gradient-color-burgundy) 40%,
+    var(--gradient-color-darkrose) 65%,
+    var(--gradient-color-medrose) 80%,
+    var(--gradient-color-gold) 100%
   );
   color: #ffffff;
 }
@@ -218,20 +227,16 @@ span {
 .brandLink:hover {
   color: #dddddd;
   transform: translateY(-2px);
-  -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: var(--gradient-color-burgundy);
-  -webkit-text-fill-color: white;
 }
 
 .navBar .navbar-nav .nav-link.navLinker {
   color: #ffffff;
 }
+
 .navBar .navbar-nav .nav-link.navLinker:hover {
   color: var(--font-highlight);
   transform: translateY(-2px);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--font-highlight);
-  -webkit-text-fill-color: var(--font-highlight);
+  text-shadow: 0 0 8px rgba(247, 187, 5, 0.5);
 }
 
 .navLinker {
@@ -288,6 +293,27 @@ span {
                  BUTTONS
 ======================================== */
 
+.btn-outline-primary {
+  color: var(--btn-outline-primary-color) !important;
+  border-color: var(--btn-outline-primary-border) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  color: var(--btn-outline-primary-hover-color) !important;
+  background-color: var(--btn-outline-primary-hover-bg) !important;
+  border-color: var(--btn-outline-primary-hover-border) !important;
+}
+
+.btn-outline-primary:focus, 
+.btn-outline-primary:active {
+  color: var(--btn-outline-primary-hover-color) !important;
+  background-color: var(--btn-outline-primary-active-bg) !important;
+  border-color: var(--btn-outline-primary-active-border) !important;
+}
+
+
+
 /* ========================================
               CHATBOT STYLES
 ======================================== */
@@ -301,7 +327,6 @@ span {
   max-height: 90vh;
   overflow: hidden;
 }
-
 .whiteSilhouette {
   filter: invert(3);
 }

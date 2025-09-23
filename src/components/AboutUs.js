@@ -4,111 +4,218 @@ import {
   Brain, 
   Cloud, 
   Search, 
-  Layers 
+  Layers,
+  BookOpen,
+  MessageSquare,
+  Cpu
 } from "lucide-react";
 
-// About page for the Heroku Back-to-School AI Challenge entry
-// Converted from Tailwind to Bootstrap classes
-
-const TechPill = ({ label, icon: Icon }) => (
-  <span className="badge bg-light text-dark border me-2 mb-2 px-3 py-2 d-inline-flex align-items-center">
-    {Icon && <Icon size={16} className="me-2" />}
+const TechPill = ({ label, icon: Icon, variant = "light" }) => (
+  <span className={`badge bg-${variant} text-dark border me-2 mb-2 px-3 py-2 d-inline-flex align-items-center`}>
+    {Icon && <Icon size={14} className="me-2" />}
     {label}
   </span>
+);
+
+const FeatureCard = ({ icon: Icon, title, description }) => (
+  <div className="col-md-6 col-lg-4 mb-4">
+    <div className="card h-100 border-0 shadow-sm">
+      <div className="card-body text-center p-4">
+        <div className="mb-3">
+          <Icon size={40} className="text-primary" />
+        </div>
+        <h5 className="fw-semibold mb-3">{title}</h5>
+        <p className="text-muted small mb-0">{description}</p>
+      </div>
+    </div>
+  </div>
 );
 
 export default function AboutUs() {
   return (
     <main className="container py-5">
       <div className="row justify-content-center">
-        <div className="col-lg-10 col-xl-8">
-          {/* Header / Hero */}
-          <section className="mb-5">
-            <h1 className="display-4 fw-bold mb-4">About This App</h1>
-            <p className="lead text-muted">
-              This project is our submission to the{' '}
-              <a
-                href="https://dev.to/devteam/join-the-heroku-back-to-school-ai-challenge-3000-in-prizes-just-for-students-2me4"
-                className="text-decoration-underline"
-                target="_blank" 
-                rel="noreferrer"
-              >
-                Heroku Back‑to‑School AI Challenge
-              </a>
-              . The goal is to build a helpful campus assistant that can answer questions with accurate, sourced information.
+        <div className="col-lg-10 col-xl-9">
+          
+          {/* Hero Section */}
+          <section className="text-center mb-5">
+            <div className="mb-4">
+              <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 fw-medium">
+                Heroku Back-to-School AI Challenge 2024
+              </span>
+            </div>
+            <h1 className="display-4 fw-bold text-dark mb-4">
+              Blazer AI
+              <span className="text-primary">.</span>
+            </h1>
+            <p className="lead text-muted mb-4 mx-auto" style={{maxWidth: '600px'}}>
+              An intelligent campus assistant powered by Retrieval-Augmented Generation, 
+              designed to provide accurate, sourced information to AB Tech students and staff.
             </p>
+            <a
+              href="https://dev.to/devteam/join-the-heroku-back-to-school-ai-challenge-3000-in-prizes-just-for-students-2me4"
+              className="btn btn-outline-primary"
+              target="_blank" 
+              rel="noreferrer"
+            >
+              View Challenge Details
+            </a>
           </section>
 
-          {/* What it does */}
+          {/* Key Features */}
           <section className="mb-5">
-            <div className="card shadow-sm">
-              <div className="card-body p-4">
-                <h2 className="h3 fw-semibold mb-3">What it does</h2>
-                <p className="text-muted mb-3">
-                  The app provides conversational answers to common student questions by combining
-                  a large language model with documents relevant to AB Tech. We use
-                  Retrieval‑Augmented Generation (RAG) so responses are grounded in the latest
-                  indexed sources rather than model guesswork.
+            <div className="text-center mb-4">
+              <h2 className="h3 fw-bold mb-3">Intelligent Information Retrieval</h2>
+              <p className="text-muted">Advanced AI capabilities designed for academic environments</p>
+            </div>
+            <div className="row">
+              <FeatureCard 
+                icon={Search}
+                title="Semantic Search"
+                description="Advanced vector embeddings enable contextual understanding beyond keyword matching"
+              />
+              <FeatureCard 
+                icon={BookOpen}
+                title="Multi-Source Integration"
+                description="Comprehensive indexing of official handbook, policies, and website content"
+              />
+              <FeatureCard 
+                icon={MessageSquare}
+                title="Conversational Interface"
+                description="Natural language processing with source attribution and academic context"
+              />
+            </div>
+          </section>
+
+          {/* Architecture Overview */}
+          <section className="mb-5">
+            <div className="card border-0 shadow-sm">
+              <div className="card-body p-4 p-md-5">
+                <h2 className="h3 fw-bold mb-4">Technical Architecture</h2>
+                
+                <div className="row align-items-center mb-4">
+                  <div className="col-lg-8">
+                    <h4 className="h5 fw-semibold mb-3">Retrieval-Augmented Generation (RAG)</h4>
+                    <p className="text-muted mb-3">
+                      Our implementation combines large language models with institution-specific 
+                      knowledge bases to ensure responses are both intelligent and factually grounded 
+                      in official AB Tech resources.
+                    </p>
+                  </div>
+                  <div className="col-lg-4 text-center">
+                    <Brain size={80} className="text-primary opacity-75" />
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h5 className="fw-semibold mb-3">Technology Stack</h5>
+                  <div className="mb-3">
+                    <TechPill label="React 18" icon={Layers} />
+                    <TechPill label="Node.js" icon={Cpu} />
+                    <TechPill label="Claude AI API" icon={Brain} />
+                    <TechPill label="PostgreSQL + pgvector" icon={Database} />
+                    <TechPill label="Vector Embeddings" icon={Search} />
+                    <TechPill label="Heroku Platform" icon={Cloud} />
+                  </div>
+                </div>
+
+                <div className="border-top pt-4">
+                  <h5 className="fw-semibold mb-3">Data Processing Pipeline</h5>
+                  <div className="row text-center">
+                    <div className="col-md-3 mb-3">
+                      <div className="bg-light rounded p-3 h-100">
+                        <div className="fw-semibold text-primary mb-2">1. Ingestion</div>
+                        <small className="text-muted">Web scraping and document parsing</small>
+                      </div>
+                    </div>
+                    <div className="col-md-3 mb-3">
+                      <div className="bg-light rounded p-3 h-100">
+                        <div className="fw-semibold text-primary mb-2">2. Processing</div>
+                        <small className="text-muted">Content chunking and embedding generation</small>
+                      </div>
+                    </div>
+                    <div className="col-md-3 mb-3">
+                      <div className="bg-light rounded p-3 h-100">
+                        <div className="fw-semibold text-primary mb-2">3. Storage</div>
+                        <small className="text-muted">Vector database indexing</small>
+                      </div>
+                    </div>
+                    <div className="col-md-3 mb-3">
+                      <div className="bg-light rounded p-3 h-100">
+                        <div className="fw-semibold text-primary mb-2">4. Retrieval</div>
+                        <small className="text-muted">Contextual answer generation</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Data Sources */}
+          <section className="mb-5">
+            <div className="row">
+              <div className="col-md-6 mb-4">
+                <div className="card h-100 border-0 shadow-sm">
+                  <div className="card-body p-4">
+                    <h4 className="h5 fw-semibold mb-3">Knowledge Base</h4>
+                    <ul className="list-unstyled">
+                      <li className="mb-2">
+                        <i className="bi bi-globe text-primary me-2"></i>
+                        <strong>AB Tech Website:</strong> Complete institutional content
+                      </li>
+                      <li className="mb-2">
+                        <i className="bi bi-file-earmark-pdf text-primary me-2"></i>
+                        <strong>Student Handbook:</strong> Official policies and procedures
+                      </li>
+                      <li className="mb-0">
+                        <i className="bi bi-book text-primary me-2"></i>
+                        <strong>Academic Catalog:</strong> Course descriptions and requirements
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6 mb-4">
+                <div className="card h-100 border-0 shadow-sm">
+                  <div className="card-body p-4">
+                    <h4 className="h5 fw-semibold mb-3">Performance Metrics</h4>
+                    <ul className="list-unstyled">
+                      <li className="mb-2">
+                        <i className="bi bi-lightning text-primary me-2"></i>
+                        <strong>Response Time:</strong> Sub-second for cached queries
+                      </li>
+                      <li className="mb-2">
+                        <i className="bi bi-check-circle text-primary me-2"></i>
+                        <strong>Source Attribution:</strong> All responses include citations
+                      </li>
+                      <li className="mb-0">
+                        <i className="bi bi-shield-check text-primary me-2"></i>
+                        <strong>Content Accuracy:</strong> Grounded in official documentation
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer / Disclaimer */}
+          <section className="border-top pt-4">
+            <div className="row align-items-center">
+              <div className="col-md-8">
+                <p className="text-muted small mb-0">
+                  <strong>Academic Project Disclaimer:</strong> This application is an educational 
+                  prototype developed for the Heroku Back-to-School AI Challenge and is not officially 
+                  affiliated with Asheville-Buncombe Technical Community College.
                 </p>
-                <ul className="list-unstyled ms-3">
-                  <li className="mb-3">
-                    <i className="bi bi-check-circle-fill text-success me-2"></i>
-                    <span className="fw-medium">Indexed sources:</span> the AB Tech website
-                    (abtech.edu) and the official College Handbook (PDF). These are chunked,
-                    embedded, and kept searchable for the assistant.
-                  </li>
-                  <li>
-                    <i className="bi bi-check-circle-fill text-success me-2"></i>
-                    <span className="fw-medium">Grounded answers:</span> the assistant looks up
-                    relevant passages first, then asks the model to formulate a concise answer
-                    based on those passages.
-                  </li>
-                </ul>
+              </div>
+              <div className="col-md-4 text-md-end">
+                <small className="text-muted">Built with ❤️ for AB Tech students</small>
               </div>
             </div>
           </section>
 
-          {/* Tech stack */}
-          <section className="mb-5">
-            <h2 className="h3 fw-semibold mb-3">Tech stack</h2>
-            <div className="mb-3">
-              <TechPill label="React" icon={Layers} />
-              <TechPill label="RAG (Retrieval‑Augmented Generation)" icon={Brain} />
-              <TechPill label="Claude AI (API)" icon={Brain} />
-              <TechPill label="Heroku Vector Database" icon={Database} />
-              <TechPill label="Embeddings for semantic search" icon={Search} />
-            </div>
-            <p className="text-muted">
-              React powers the frontend experience. We use <span className="fw-medium">Claude AI</span>
-              {' '}for language understanding and generation, while <span className="fw-medium">Heroku Vector
-              Database</span> stores embeddings that enable fast, semantic retrieval of relevant content
-              during chat. The combination is what makes RAG work.
-            </p>
-          </section>
-
-          {/* How it works at a glance */}
-          <section className="mb-5">
-            <div className="card shadow-sm">
-              <div className="card-body p-4">
-                <h3 className="h4 fw-semibold mb-3">How it works (at a glance)</h3>
-                <ol className="ms-3">
-                  <li className="mb-2">We crawl and parse AB Tech resources (website + handbook).</li>
-                  <li className="mb-2">Content is chunked and embedded, then stored in Heroku Vector DB.</li>
-                  <li className="mb-2">On each question, we retrieve the most relevant chunks.</li>
-                  <li>Claude synthesizes a clear answer grounded in those chunks.</li>
-                </ol>
-              </div>
-            </div>
-          </section>
-
-          {/* Notes / Attribution */}
-          <section className="text-muted small">
-            <p className="mb-0">
-              <span className="fw-medium">Disclaimer:</span> This project is an educational
-              prototype for the Heroku challenge and is not officially affiliated with A‑B Tech.
-              Source coverage may evolve as we iterate.
-            </p>
-          </section>
         </div>
       </div>
     </main>
