@@ -7,7 +7,9 @@ import {
   Layers,
   BookOpen,
   MessageSquare,
-  Cpu
+  Cpu,
+  SearchCheck,
+  Heart
 } from "lucide-react";
 
 const TechPill = ({ label, icon: Icon, variant = "light" }) => (
@@ -41,7 +43,7 @@ export default function AboutUs() {
           <section className="text-center mb-5">
             <div className="mb-4">
               <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 fw-medium">
-                Heroku Back-to-School AI Challenge 2024
+                Heroku Back-to-School AI Challenge 2025
               </span>
             </div>
             <h1 className="display-4 fw-bold text-dark mb-4">
@@ -116,6 +118,7 @@ export default function AboutUs() {
                     <TechPill label="PostgreSQL + pgvector" icon={Database} />
                     <TechPill label="Vector Embeddings" icon={Search} />
                     <TechPill label="Heroku Platform" icon={Cloud} />
+                    <TechPill label="Semantic Search" icon={SearchCheck} />
                   </div>
                 </div>
 
@@ -211,7 +214,7 @@ export default function AboutUs() {
                 </p>
               </div>
               <div className="col-md-4 text-md-end">
-                <small className="text-muted">Built with ❤️ for AB Tech students</small>
+                <small className="text-muted">Built with <Heart /> for AB Tech students</small>
               </div>
             </div>
           </section>
