@@ -86,22 +86,6 @@ const ChatInterface = () => {
       <div className="row h-100 justify-content-center">
         <div className="col-12 col-lg-8 border d-flex flex-column rounded p-1 p-md-3 bg-light">
           {/* Header */}
-          <div className="bg-white border-bottom p-2 p-md-3 shadow-sm rounded">
-            <div className="d-flex align-items-center">
-              <div
-                className="avatarBackground rounded-circle d-flex align-items-center justify-content-center me-2 me-md-3"
-                style={{ width: '32px', height: '32px', '@media (min-width: 768px)': { width: '40px', height: '40px' } }}
-              >
-                <span className="text-white fw-bold" style={{ fontSize: '0.8rem' }}><BotMessageSquare /></span>
-              </div>
-              <div>
-                <h6 className="h5 mb-0 text-dark d-none d-md-block">Blazer AI</h6>
-                <h6 className="mb-0 text-dark d-md-none">Blazer AI</h6>
-                <small className="text-muted d-none d-sm-block">Online and ready to help</small>
-              </div>
-            </div>
-          </div>
-
           {/* Messages Container */}
           <div 
             className="flex-grow-1 overflow-auto p-1 p-md-3" 
