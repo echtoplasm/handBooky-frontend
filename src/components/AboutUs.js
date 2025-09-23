@@ -112,7 +112,7 @@ export default function AboutUs() {
                 <div className="mb-4">
                   <h5 className="fw-semibold mb-3">Technology Stack</h5>
                   <div className="mb-3">
-                    <TechPill label="React 18" icon={Layers} />
+                    <TechPill label="React 19" icon={Layers} />
                     <TechPill label="Node.js" icon={Cpu} />
                     <TechPill label="Claude AI API" icon={Brain} />
                     <TechPill label="PostgreSQL + pgvector" icon={Database} />
@@ -213,8 +213,8 @@ export default function AboutUs() {
                   affiliated with Asheville-Buncombe Technical Community College.
                 </p>
               </div>
-              <div className="col-md-4 text-md-end">
-                <small className="text-muted">Built with <Heart /> for AB Tech students</small>
+              <div className="col-md-4 mt-3 mt-md-0">
+                <small className="text-muted">Built with <Heart size={18} /> by Zachary Massey for AB Tech students and staff</small>
               </div>
             </div>
           </section>
