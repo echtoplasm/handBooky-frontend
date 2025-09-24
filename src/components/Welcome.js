@@ -50,18 +50,18 @@ const WelcomePage = () => {
                   <span className="me-2">
                     <LucideComputer />
                   </span>
-                  What are the prerequisites for Java Programming?
+                  What are the pre-reqs for Java Programming?
                 </div>
               </div>
               <div className="col-12 col-md-6">
                 <div
                   className="sample-question-item d-flex align-items-center"
-                  onClick={() => handleQuestionClick("What topics are covered in MySQL?")}
+                  onClick={() => handleQuestionClick("What topics are covered in DBA-120?")}
                 >
                   <span className="me-2">
                     <Binary />
                   </span>
-                  What topics are covered in MySQL?
+                  What topics are covered in DBA-120?
                 </div>
               </div>
               <div className="col-12 col-md-6">

@@ -18,7 +18,28 @@ const ChatInterface = () => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Auto scroll to bottom when new messages arrive
+  const renderMessageWithLinks = text => {
+    const regexp = /(https?:\/\/[^\s"]+)/g;
+    const parts = text.split(regexp);
+
+    return parts.map((part, index) => {
+      if (part.match(regexp)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#007bff', textDecoration: 'underline' }}
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+  
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
@@ -75,7 +96,7 @@ const ChatInterface = () => {
 
       const aiMessage = {
         id: Date.now() + 1,
-        text: aiResponseData.message || 'no reponse recieved',
+        text: renderMessageWithLinks(aiResponseData.message) || 'no reponse recieved',
         sender: 'bot',
         timestamp: new Date(),
       };

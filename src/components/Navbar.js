@@ -24,9 +24,6 @@ const Navbar = () => {
             decoding="async"
           />
 
-          {/* Option B: inline ReactComponent SVG
-              <Logo style={{ height: 36, width: 36 }} className="d-inline-block align-text-top" />
-          */}
 
           <h1 className="fw-bold" style={{ fontSize: '2rem', transform: 'translateY(5px)', marginRight: '4px' }}>Blazer AI</h1>
         </BSNavbar.Brand>
