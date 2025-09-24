@@ -1,15 +1,20 @@
 import React from "react";
-import { 
-  Database, 
-  Brain, 
-  Cloud, 
-  Search, 
+import {
+  Database,
+  Brain,
+  Cloud,
+  Search,
   Layers,
   BookOpen,
   MessageSquare,
   Cpu,
   SearchCheck,
-  Heart
+  Heart,
+  Clock,
+  GitBranch,
+  Activity,
+  Settings,
+  Shield
 } from "lucide-react";
 
 const TechPill = ({ label, icon: Icon, variant = "light" }) => (
@@ -108,17 +113,115 @@ export default function AboutUs() {
                     <Brain size={80} className="text-primary opacity-75" />
                   </div>
                 </div>
+{/* Heroku Integration */}
+<section className="mb-5">
+  <div className="card border-1 shadow-sm">
+    <div className="card-body p-4 p-md-5">
+      <div className="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+        <h2 className="h3 fw-bold mb-0">Heroku Integration & Deployment</h2>
+        <span className="badge bg-primary bg-opacity-10 text-primary px-3 py-2">
+          Deployed on Heroku
+        </span>
+      </div>
+
+      <p className="text-muted mb-4">
+        Blazer AI is built and deployed on the Heroku platform to keep student-facing services
+        fast, reliable, and easy to iterate. We use Heroku’s managed data, CI-friendly deploys,
+        and operational tooling to ship new features with confidence.
+      </p>
+
+      <div className="row">
+        <FeatureCard
+          icon={GitBranch}
+          title="Pipelines & Review Apps"
+          description="Every pull request spins up a temporary app so we can preview changes before merging. Promotion flows push builds from staging to production with one click."
+        />
+        <FeatureCard
+          icon={Clock}
+          title="Scheduler Jobs"
+          description="Nightly crawls refresh handbook/website content and regenerate embeddings on a worker dyno using Heroku Scheduler."
+        />
+        <FeatureCard
+          icon={Database}
+          title="Heroku Postgres + pgvector"
+          description="Official docs are embedded and indexed in Postgres with pgvector for high-quality semantic retrieval."
+        />
+        <FeatureCard
+          icon={Database}
+          title="Heroku Data for Redis"
+          description="Hot answers and conversation state are cached to reduce latency and keep response times snappy."
+        />
+        <FeatureCard
+          icon={Shield}
+          title="Config Vars & Secrets"
+          description="Claude keys, database URLs, and app settings are managed via Heroku Config Vars—no secrets in code."
+        />
+        <FeatureCard
+          icon={Activity}
+          title="Metrics & Logs"
+          description="Built-in Heroku Metrics and structured logs help us monitor performance, errors, and model usage trends."
+        />
+      </div>
+
+      <div className="border-top pt-4 mt-4">
+        <h5 className="fw-semibold mb-3">Dyno Topology</h5>
+        <div className="row text-center">
+          <div className="col-md-4 mb-3">
+            <div className="bg-light rounded p-3 h-100">
+              <div className="fw-semibold text-primary mb-2">Web Dyno</div>
+              <small className="text-muted">Serves the React UI + API gateway</small>
+            </div>
+          </div>
+          <div className="col-md-4 mb-3">
+            <div className="bg-light rounded p-3 h-100">
+              <div className="fw-semibold text-primary mb-2">Worker Dyno</div>
+              <small className="text-muted">Crawling, chunking, embeddings, batch tasks</small>
+            </div>
+          </div>
+          <div className="col-md-4 mb-3">
+            <div className="bg-light rounded p-3 h-100">
+              <div className="fw-semibold text-primary mb-2">Scheduler</div>
+              <small className="text-muted">Nightly/weekly maintenance jobs</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-top pt-4 mt-4">
+        <h5 className="fw-semibold mb-3">Why Heroku for Students</h5>
+        <ul className="text-muted mb-0">
+          <li className="mb-2"><strong>Simple Git-based deploys:</strong> Push to main and ship.</li>
+          <li className="mb-2"><strong>PR-level previews:</strong> Review Apps make teamwork faster.</li>
+          <li className="mb-2"><strong>Managed data:</strong> Postgres + Redis without ops overhead.</li>
+          <li className="mb-0"><strong>Built-in observability:</strong> Metrics & logs out of the box.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
                 <div className="mb-4">
                   <h5 className="fw-semibold mb-3">Technology Stack</h5>
                   <div className="mb-3">
+                    {/* Core app / AI */}
                     <TechPill label="React 19" icon={Layers} />
                     <TechPill label="Node.js" icon={Cpu} />
                     <TechPill label="Claude AI API" icon={Brain} />
-                    <TechPill label="PostgreSQL + pgvector" icon={Database} />
                     <TechPill label="Vector Embeddings" icon={Search} />
-                    <TechPill label="Heroku Platform" icon={Cloud} />
                     <TechPill label="Semantic Search" icon={SearchCheck} />
+
+                    {/* Heroku platform */}
+                    <TechPill label="Heroku Platform" icon={Cloud} />
+                    <TechPill label="Heroku Dynos (Web & Worker)" icon={Cpu} />
+                    <TechPill label="Heroku Pipelines & Review Apps" icon={GitBranch} />
+                    <TechPill label="Heroku Config Vars (Secrets)" icon={Shield} />
+                    <TechPill label="Heroku Buildpacks" icon={Settings} />
+                    <TechPill label="Heroku Scheduler (Jobs)" icon={Clock} />
+                    <TechPill label="Heroku Metrics & Logs" icon={Activity} />
+
+                    {/* Data on Heroku */}
+                    <TechPill label="Heroku Postgres + pgvector" icon={Database} />
+                    <TechPill label="Heroku Data for Redis (Cache)" icon={Database} />
                   </div>
                 </div>
 
@@ -214,7 +317,7 @@ export default function AboutUs() {
                 </p>
               </div>
               <div className="col-md-4 mt-3 mt-md-0">
-                <small className="text-muted">Built with <Heart size={18} /> by Zachary Massey for AB Tech students and staff</small>
+                <small className="text-muted">Built with <Heart size={18} color="red" /> by Zachary Massey for AB Tech students and staff. Hosted on Heroku</small>
               </div>
             </div>
           </section>
