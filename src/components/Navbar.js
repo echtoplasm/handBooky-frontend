@@ -28,7 +28,7 @@ const Navbar = () => {
               <Logo style={{ height: 36, width: 36 }} className="d-inline-block align-text-top" />
           */}
 
-          <span className="fw-bold " style={{ fontSize: '2.5rem' }}>Blazer AI</span>
+          <h1 className="fw-bold" style={{ fontSize: '2rem', transform: 'translateY(5px)', marginRight: '4px' }}>Blazer AI</h1>
         </BSNavbar.Brand>
 
         <BSNavbar.Toggle aria-controls="basic-navbar-nav" />
