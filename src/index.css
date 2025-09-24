@@ -60,11 +60,10 @@ span {
   font-family: 'Nunito', sans-serif;
 }
 
-
-
 .subText {
   color: var(--font-secondary);
 }
+
 /* ========================================
               WELCOME PAGE 
 ======================================== */
@@ -291,6 +290,24 @@ span {
     0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.mainCard {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(240, 242, 245, 0.35) 20%,
+    rgba(220, 225, 230, 0.45) 40%,
+    rgba(200, 210, 220, 0.35) 70%,
+    rgba(240, 242, 245, 0.25) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
 /* ========================================
                  BUTTONS
 ======================================== */
@@ -307,14 +324,12 @@ span {
   border-color: var(--btn-outline-primary-hover-border) !important;
 }
 
-.btn-outline-primary:focus, 
+.btn-outline-primary:focus,
 .btn-outline-primary:active {
   color: var(--btn-outline-primary-hover-color) !important;
   background-color: var(--btn-outline-primary-active-bg) !important;
   border-color: var(--btn-outline-primary-active-border) !important;
 }
-
-
 
 /* ========================================
               CHATBOT STYLES

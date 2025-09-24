@@ -1,11 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { BotMessageSquare } from 'lucide-react';
+import { Context } from '../context/sampleQuestionContext';
 
 const ChatInterface = () => {
+  const [globalData, setGlobalData] = useContext(Context);
+  console.log('Current globalData in ChatInterface:', globalData);
   const [messages, setMessages] = useState(() => [
     {
       id: 'initial-1',
-      text: "Hello! I'm Blazer your AB-tech centered AI assistant. How can I help?",
+      text: "Hello! I'm Blazer your A-B tech centered AI assistant. How can I help?",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -19,6 +22,24 @@ const ChatInterface = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
+
+  useEffect(() => {
+    console.log('Global data changed:', globalData);
+    if (globalData) {
+      console.log('Setting input value to:', globalData);
+
+      setInputValue(globalData);
+
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.focus();
+          inputRef.current.setSelectionRange(globalData.length, globalData.length);
+        }
+
+        setGlobalData('');
+      }, 200);
+    }
+  }, [globalData, setGlobalData]);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isTyping) return;

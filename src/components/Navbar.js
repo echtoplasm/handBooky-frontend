@@ -38,7 +38,7 @@ const Navbar = () => {
               Home
             </Nav.Link>
             <Nav.Link as={NavLink} to="/aboutUs" className="navLinker">
-              About Us
+              About
             </Nav.Link>
           </Nav>
         </BSNavbar.Collapse>
