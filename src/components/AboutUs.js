@@ -165,7 +165,7 @@ export default function AboutUs() {
                     <ul className="list-unstyled">
                       <li className="mb-2">
                         <i className="bi bi-globe text-primary me-2"></i>
-                        <strong>AB Tech Website:</strong> Complete institutional content
+                        <strong>A-B Tech Website:</strong> Complete institutional content
                       </li>
                       <li className="mb-2">
                         <i className="bi bi-file-earmark-pdf text-primary me-2"></i>
@@ -214,7 +214,7 @@ export default function AboutUs() {
                 </p>
               </div>
               <div className="col-md-4 mt-3 mt-md-0">
-                <small className="text-muted">Built with <Heart size={18} /> by Zachary Massey for AB Tech students and staff</small>
+                <small className="text-muted">Built with <Heart size={18} /> by Zachary Massey for A-B Tech students and staff</small>
               </div>
             </div>
           </section>
