@@ -78,12 +78,12 @@ const WelcomePage = () => {
               <div className="col-12 col-md-6">
                 <div
                   className="sample-question-item d-flex align-items-center"
-                  onClick={() => handleQuestionClick("How do I register for classes?")}
+                  onClick={() => handleQuestionClick("How can I apply for financial aid?")}
                 >
                   <span className="me-2">
                     <NotebookPen />
                   </span>
-                  How do I register for classes?
+                  How can I apply for financial aid?
                 </div>
               </div>
             </div>
