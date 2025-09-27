@@ -8,7 +8,7 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState(() => [
     {
       id: 'initial-1',
-      text: "Hello! I'm Blazer your A-B tech centered AI assistant. How can I help?",
+      text: "Hello! I'm Blazer your A-B Tech AI assistant. How can I help?",
       sender: 'bot',
       timestamp: new Date(),
     },
